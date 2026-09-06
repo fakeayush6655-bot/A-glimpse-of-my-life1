@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #0b0805;
+    color: #ead9b0;
+    font-family: "Cormorant Garamond", serif;
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.chapter-background {
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(184, 135, 48, 0.13),
+            transparent 45%
+        ),
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(120, 80, 25, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(120, 80, 25, 0.06),
+            transparent 30%
+        ),
+        #0b0805;
+}
+
+/* subtle golden light */
+
+.chapter-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(218, 170, 70, 0.025),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   GOLDEN DUST
+========================= */
+
+.chapter-dust {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.chapter-dust span {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    background: rgba(224, 181, 82, 0.7);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px rgba(224, 181, 82, 0.8);
+
+    animation: dustFloat 8s infinite ease-in-out;
+}
+
+.chapter-dust span:nth-child(1) {
+    top: 15%;
+    left: 12%;
+    animation-delay: 0s;
+}
+
+.chapter-dust span:nth-child(2) {
+    top: 30%;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+.chapter-dust span:nth-child(3) {
+    top: 65%;
+    left: 18%;
+    animation-delay: 4s;
+}
+
+.chapter-dust span:nth-child(4) {
+    top: 75%;
+    left: 82%;
+    animation-delay: 1s;
+}
+
+.chapter-dust span:nth-child(5) {
+    top: 45%;
+    left: 55%;
+    animation-delay: 3s;
+}
+
+.chapter-dust span:nth-child(6) {
+    top: 20%;
+    left: 65%;
+    animation-delay: 5s;
+}
+
+.chapter-dust span:nth-child(7) {
+    top: 85%;
+    left: 45%;
+    animation-delay: 2.5s;
+}
+
+.chapter-dust span:nth-child(8) {
+    top: 55%;
+    left: 90%;
+    animation-delay: 4.5s;
+}
+
+@keyframes dustFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translateY(-18px);
+        opacity: 0.9;
+    }
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.chapter-page {
+    width: min(900px, 90%);
+    margin: auto;
+
+    padding: 100px 0 70px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.chapter-header {
+    margin-bottom: 55px;
+}
+
+.chapter-label {
+    font-family: "Playfair Display", serif;
+
+    font-size: 12px;
+    letter-spacing: 5px;
+
+    color: #b98a38;
+
+    margin-bottom: 20px;
+
+    opacity: 0.85;
+}
+
+.chapter-header h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(35px, 6vw, 62px);
+
+    font-weight: 500;
+
+    color: #e5c77b;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 20px rgba(216, 169, 70, 0.15);
+}
+
+.chapter-header p {
+    margin-top: 16px;
+
+    font-size: 18px;
+
+    color: #a99876;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    position: relative;
+
+    width: 100%;
+
+    padding: 55px 65px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 26, 15, 0.95),
+            rgba(17, 12, 7, 0.97)
+        );
+
+    border: 1px solid rgba(189, 141, 50, 0.35);
+
+    box-shadow:
+        0 0 40px rgba(0, 0, 0, 0.65),
+        inset 0 0 35px rgba(184, 135, 48, 0.035);
+
+    text-align: left;
+}
+
+
+/* decorative corners */
+
+.letter::before,
+.letter::after {
+    content: "✦";
+
+    position: absolute;
+
+    color: #bd8d32;
+
+    font-size: 17px;
+
+    opacity: 0.7;
+}
+
+.letter::before {
+    top: 15px;
+    left: 18px;
+}
+
+.letter::after {
+    bottom: 15px;
+    right: 18px;
+}
+
+
+/* =========================
+   LETTER MARK
+========================= */
+
+.letter-mark {
+    text-align: center;
+
+    font-size: 20px;
+
+    color: #c69a45;
+
+    margin-bottom: 35px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.letter-text {
+    font-size: 21px;
+
+    line-height: 1.9;
+
+    letter-spacing: 0.25px;
+
+    color: #d6c49e;
+
+    min-height: 250px;
+}
+
+
+/* each printed word */
+
+.letter-word {
+    display: inline;
+
+    opacity: 0;
+
+    animation: wordAppear 0.35s ease forwards;
+}
+
+@keyframes wordAppear {
+
+    from {
+        opacity: 0;
+        filter: blur(4px);
+    }
+
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+
+/* =========================
+   END STAR
+========================= */
+
+.letter-end {
+    text-align: center;
+
+    margin-top: 40px;
+
+    color: #d3a54f;
+
+    font-size: 22px;
+
+    opacity: 0;
+
+    transition: opacity 1.5s ease;
+
+    text-shadow:
+        0 0 12px rgba(218, 170, 70, 0.5);
+}
+
+.letter-end.show {
+    opacity: 1;
+}
+
+
+/* =========================
+   RETURN BUTTON
+========================= */
+
+.chapter-back {
+    display: inline-block;
+
+    margin-top: 45px;
+
+    padding: 12px 24px;
+
+    border: 1px solid rgba(189, 141, 50, 0.45);
+
+    color: #bfa66e;
+
+    text-decoration: none;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    opacity: 0;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.chapter-back.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.chapter-back:hover {
+    background: rgba(189, 141, 50, 0.12);
+
+    color: #e4c477;
+
+    box-shadow:
+        0 0 20px rgba(189, 141, 50, 0.12);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .chapter-page {
+        width: 92%;
+
+        padding-top: 65px;
+    }
+
+    .chapter-header {
+        margin-bottom: 35px;
+    }
+
+    .chapter-label {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .chapter-header h1 {
+        font-size: 34px;
+    }
+
+    .chapter-header p {
+        font-size: 16px;
+    }
+
+    .letter {
+        padding: 38px 25px;
+    }
+
+    .letter-text {
+        font-size: 18px;
+
+        line-height: 1.8;
+    }
+
+    .chapter-back {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+}

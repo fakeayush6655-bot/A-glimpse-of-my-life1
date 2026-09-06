@@ -1,0 +1,525 @@
+/*==================================================
+                    RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --gold:#d4af37;
+    --gold-light:#f4d98a;
+    --text:#4b382a;
+
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:
+    radial-gradient(circle at top,#fffefb,#f5ead8);
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    color:var(--text);
+
+    position:relative;
+
+}
+
+/*==================================================
+                PAPER OVERLAY
+==================================================*/
+
+.paper-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:url("../images/paper-texture.png");
+
+    opacity:.08;
+
+    pointer-events:none;
+
+    z-index:-5;
+
+}
+
+/*==================================================
+            FLOATING ELEMENTS
+==================================================*/
+
+.floating-elements{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+.floating-elements span{
+
+    position:absolute;
+
+    font-size:28px;
+
+    opacity:.12;
+
+    animation:floatEmoji 18s linear infinite;
+
+}
+
+.floating-elements span:nth-child(1){left:8%;}
+.floating-elements span:nth-child(2){left:28%;animation-delay:3s;}
+.floating-elements span:nth-child(3){left:48%;animation-delay:6s;}
+.floating-elements span:nth-child(4){left:68%;animation-delay:9s;}
+.floating-elements span:nth-child(5){left:88%;animation-delay:12s;}
+
+@keyframes floatEmoji{
+
+from{
+
+transform:
+translateY(110vh)
+rotate(0deg);
+
+}
+
+to{
+
+transform:
+translateY(-20vh)
+rotate(360deg);
+
+}
+
+}
+
+/*==================================================
+                    HERO
+==================================================*/
+
+.hero{
+
+    text-align:center;
+
+    padding:70px 20px 40px;
+
+}
+
+.hero .mini{
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    color:#8b775f;
+
+}
+
+.hero h1{
+
+    margin-top:12px;
+
+    font-size:72px;
+
+    font-family:"Cormorant Garamond",serif;
+
+    color:var(--gold);
+
+    text-shadow:0 0 18px rgba(212,175,55,.25);
+
+}
+
+.subtitle{
+
+    max-width:700px;
+
+    margin:18px auto;
+
+    color:#6b5b4d;
+
+    line-height:1.9;
+
+}
+
+/*==================================================
+                IMAGE
+==================================================*/
+
+.image-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:45px 0;
+
+}
+
+.image-frame{
+
+    width:440px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:
+
+    0 0 35px rgba(212,175,55,.22),
+
+    0 25px 55px rgba(0,0,0,.18);
+
+}
+
+.image-frame img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:12px;
+
+}
+
+/*==================================================
+            BURNT PAPER
+==================================================*/
+
+.paper-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:55px 0;
+
+}
+
+.paper-container{
+
+    position:relative;
+
+    width:min(950px,95%);
+
+}
+
+.burnt-paper{
+
+    width:100%;
+
+    display:block;
+
+    filter:drop-shadow(0 20px 45px rgba(0,0,0,.28));
+}
+
+/*==================================================
+                POEM TEXT
+==================================================*/
+
+.poem-text{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:72%;
+
+    text-align:center;
+
+    color:#3d2d21;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:32px;
+
+    line-height:2;
+
+    z-index:5;
+
+    text-shadow:
+    0 0 12px rgba(255,255,255,.45);
+
+}
+
+.poem-text p{
+
+    margin-bottom:28px;
+
+}
+
+/*==================================================
+                SIGNATURE
+==================================================*/
+
+.signature-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:25px;
+
+}
+
+.signature{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:28px;
+
+    color:var(--gold);
+
+    font-style:italic;
+
+    text-shadow:
+    0 0 10px rgba(212,175,55,.25);
+
+}
+
+/*==================================================
+                ENDING
+==================================================*/
+
+.ending-section{
+
+    text-align:center;
+
+    margin:35px auto;
+
+    max-width:700px;
+
+}
+
+.ending-text{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#6c5b4d;
+
+    font-style:italic;
+
+}
+
+/*==================================================
+                BACK BUTTON
+==================================================*/
+
+.back-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:45px 0 80px;
+
+}
+
+.back-btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #d4af37,
+        #f4d98a
+    );
+
+    padding:15px 38px;
+
+    border-radius:50px;
+
+    font-weight:500;
+
+    transition:.35s;
+
+    box-shadow:
+    0 12px 30px rgba(212,175,55,.35);
+
+}
+
+.back-btn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 20px 45px rgba(212,175,55,.45);
+
+}
+
+/*==================================================
+            PAGE TRANSITION
+==================================================*/
+
+.page-transition{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.6s;
+
+    z-index:9999;
+
+}
+
+.page-transition.active{
+
+    opacity:1;
+
+}
+
+/*==================================================
+                FADE ANIMATION
+==================================================*/
+
+.hero,
+.image-frame,
+.paper-container,
+.signature,
+.ending-section,
+.back-btn{
+
+    opacity:0;
+
+    animation:fadeUp 1s forwards;
+
+}
+
+.hero{animation-delay:.1s;}
+.image-frame{animation-delay:.4s;}
+.paper-container{animation-delay:.7s;}
+.signature{animation-delay:1s;}
+.ending-section{animation-delay:1.2s;}
+.back-btn{animation-delay:1.4s;}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+@media(max-width:900px){
+
+    .paper-container{
+
+        width:96%;
+
+    }
+
+    .poem-text{
+
+        width:76%;
+        font-size:24px;
+        line-height:1.8;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+
+        font-size:52px;
+
+    }
+
+    .image-frame{
+
+        width:320px;
+
+    }
+
+    .poem-text{
+
+        font-size:20px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+    .image-frame{
+
+        width:250px;
+
+        padding:14px;
+
+    }
+
+    .poem-text{
+
+        width:80%;
+        font-size:16px;
+        line-height:1.6;
+
+    }
+
+    .signature{
+
+        font-size:22px;
+
+    }
+
+    .ending-text{
+
+        font-size:15px;
+
+    }
+
+}

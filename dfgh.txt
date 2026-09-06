@@ -1,0 +1,730 @@
+HTML 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Timeline of Little Things</title>
+
+    <link rel="stylesheet" href="assets/css/timeline.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background"></div>
+
+    <!-- Floating particles -->
+    <div class="particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+    <!-- Main -->
+    <main class="timeline-page">
+
+
+        
+
+        <!-- Heading -->
+
+        <section class="timeline-header">
+
+            <div class="eyebrow">
+                A JOURNEY THROUGH TIME
+            </div>
+
+            <h1>
+                The Timeline
+            </h1>
+
+            <p>
+                Some moments were ordinary when they happened...
+                <br>
+                but somehow, they stayed.
+            </p>
+
+        </section>
+
+
+        <!-- Timeline -->
+
+        <section class="timeline">
+
+            <!-- Vertical line -->
+            <div class="timeline-rope">
+
+                <svg class="rope-svg" viewBox="0 0 100 1000" preserveAspectRatio="none">
+
+                    <path class="rope-glow"></path>
+                    <path class="rope-shadow"></path>
+                    <path class="rope-main"></path>
+                    <path class="rope-highlight"></path>
+
+                </svg>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- INCIDENT 1 -->
+            <!-- ========================= -->
+
+            <div class="timeline-item left">
+
+                <div class="timeline-content">
+
+                    <span class="date">
+                        17 AUGUST 2023
+                    </span>
+
+                    <h2>
+                        The Beginning
+                    </h2>
+
+                    <p>
+                        Some stories don't begin with something extraordinary.
+                        Sometimes they begin with something so simple that
+                        you don't even realise its importance.
+                    </p>
+
+                </div>
+
+                <button
+                    class="star"
+                    onclick="openMemory(
+                    'The Beginning',
+                    '17 August 2023',
+                    'Some stories begin quietly. This was one of those moments.'
+                    )">
+
+                    ✦
+
+                </button>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- INCIDENT 2 -->
+            <!-- ========================= -->
+
+            <div class="timeline-item right">
+
+                <button
+                    class="star"
+                    onclick="openMemory(
+                    'A Little Memory',
+                    '04 September 2023',
+                    'A small moment that somehow became a memory worth keeping.'
+                    )">
+
+                    ✦
+
+                </button>
+
+                <div class="timeline-content">
+
+                    <span class="date">
+                        04 SEPTEMBER 2023
+                    </span>
+
+                    <h2>
+                        A Little Memory
+                    </h2>
+
+                    <p>
+                        Not every important memory has a dramatic beginning.
+                        Some simply happen and quietly become special.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- INCIDENT 3 -->
+            <!-- ========================= -->
+
+            <div class="timeline-item left">
+
+                <div class="timeline-content">
+
+                    <span class="date">
+                        21 NOVEMBER 2023
+                    </span>
+
+                    <h2>
+                        That One Day
+                    </h2>
+
+                    <p>
+                        There are days you remember because something happened.
+                        And then there are days you remember simply because
+                        of how they felt.
+                    </p>
+
+                </div>
+
+                <button
+                    class="star"
+                    onclick="openMemory(
+                    'That One Day',
+                    '21 November 2023',
+                    'I don\'t remember every detail. I remember the feeling.'
+                    )">
+
+                    ✦
+
+                </button>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- SPECIAL CHAPTER 1 -->
+            <!-- ========================= -->
+
+            <div class="timeline-item special right">
+
+                <button
+                    class="special-star"
+                    onclick="goToPage(
+                    'if_you_ever_wondered.html'
+                    )">
+
+                    ✦
+
+                </button>
+
+                <div class="special-content">
+
+                    <span class="chapter">
+                        CHAPTER I
+                    </span>
+
+                    <h2>
+                        If You Ever Wondered
+                    </h2>
+
+                    <p>
+                        For all the things that were never really said...
+                    </p>
+
+                    <span class="read">
+                        ENTER CHAPTER →
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- INCIDENT 4 -->
+            <!-- ========================= -->
+
+            <div class="timeline-item left">
+
+                <div class="timeline-content">
+
+                    <span class="date">
+                        14 FEBRUARY 2024
+                    </span>
+
+                    <h2>
+                        Somewhere Between
+                    </h2>
+
+                    <p>
+                        Somewhere between ordinary conversations and
+                        unforgettable moments, something quietly changed.
+                    </p>
+
+                </div>
+
+                <button
+                    class="star"
+                    onclick="openMemory(
+                    'Somewhere Between',
+                    '14 February 2024',
+                    'Maybe some feelings don\'t arrive suddenly. Maybe they grow quietly.'
+                    )">
+
+                    ✦
+
+                </button>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- SPECIAL CHAPTER 2 -->
+            <!-- ========================= -->
+
+            <div class="timeline-item special left">
+
+                <div class="special-content">
+
+                    <span class="chapter">
+                        CHAPTER II
+                    </span>
+
+                    <h2>
+                        Things I Hope You Remember
+                    </h2>
+
+                    <p>
+                        A few things I hope time never manages to erase.
+                    </p>
+
+                    <span class="read">
+                        ENTER CHAPTER →
+                    </span>
+
+                </div>
+
+                <button
+                    class="special-star"
+                    onclick="goToPage(
+                    'things_i_hope_you_remember.html'
+                    )">
+
+                    ✦
+
+                </button>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- INCIDENT 5 -->
+            <!-- ========================= -->
+
+            <div class="timeline-item right">
+
+                <button
+                    class="star"
+                    onclick="openMemory(
+                    'Still Here',
+                    '08 July 2024',
+                    'Time moved forward. Some memories simply decided to stay.'
+                    )">
+
+                    ✦
+
+                </button>
+
+                <div class="timeline-content">
+
+                    <span class="date">
+                        08 JULY 2024
+                    </span>
+
+                    <h2>
+                        Still Here
+                    </h2>
+
+                    <p>
+                        Years can pass, conversations can change,
+                        but some little things remain surprisingly constant.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- SPECIAL CHAPTER 3 -->
+            <!-- ========================= -->
+
+            <div class="timeline-item special right final">
+
+                <button
+                    class="special-star"
+                    onclick="goToPage(
+                    'whereever_life_takes_us.html'
+                    )">
+
+                    ✦
+
+                </button>
+
+                <div class="special-content">
+
+                    <span class="chapter">
+                        FINAL CHAPTER
+                    </span>
+
+                    <h2>
+                        Wherever Life Takes Us
+                    </h2>
+
+                    <p>
+                        Some stories don't need promises.
+                        They just deserve to be remembered.
+                    </p>
+
+                    <span class="read">
+                        ENTER CHAPTER →
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Ending -->
+
+        <section class="timeline-end">
+
+            <div class="end-line"></div>
+
+            <p>
+                And perhaps...
+                <br>
+                this isn't really the end.
+            </p>
+
+            <a href="hub.html" class="back-button">
+                ← Return
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Memory popup -->
+
+    <div class="memory-overlay" id="memoryOverlay">
+
+        <div class="memory-card">
+
+            <button
+                class="close"
+                onclick="closeMemory()">
+
+                ×
+
+            </button>
+
+            <span id="memoryDate">
+                DATE
+            </span>
+
+            <h2 id="memoryTitle">
+                Memory
+            </h2>
+
+            <p id="memoryText">
+                Memory text...
+            </p>
+
+            <div class="memory-star">
+                ✦
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="assets/js/timeline.js"></script>
+
+    <script src="assets/js/music.js"></script>
+
+</body>
+</html> 
+
+
+
+css
+
+
+/* ========================= */
+/* MEMORY POPUP */
+/* ========================= */
+
+function openMemory(title, date, text) {
+
+    const overlay =
+        document.getElementById("memoryOverlay");
+
+    const memoryTitle =
+        document.getElementById("memoryTitle");
+
+    const memoryDate =
+        document.getElementById("memoryDate");
+
+    const memoryText =
+        document.getElementById("memoryText");
+
+
+    memoryTitle.textContent = title;
+
+    memoryDate.textContent = date;
+
+    memoryText.textContent = text;
+
+
+    overlay.classList.add("active");
+
+}
+
+
+/* ========================= */
+/* CLOSE MEMORY */
+/* ========================= */
+
+function closeMemory() {
+
+    const overlay =
+        document.getElementById("memoryOverlay");
+
+    overlay.classList.remove("active");
+
+}
+
+
+/* ========================= */
+/* CLICK OUTSIDE */
+/* ========================= */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        const overlay =
+            document.getElementById("memoryOverlay");
+
+        const card =
+            document.querySelector(".memory-card");
+
+
+        if (
+            event.target === overlay
+        ) {
+
+            closeMemory();
+
+        }
+
+    }
+
+
+    
+);
+
+
+/* ========================= */
+/* ESCAPE KEY */
+/* ========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeMemory();
+
+        }
+
+    }
+);
+
+
+/* ========================= */
+/* SPECIAL CHAPTER */
+/* ========================= */
+
+function goToPage(page) {
+
+    window.location.href = page;
+
+}
+
+
+/* ========================= */
+/* PAGE LOAD */
+/* ========================= */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        document.body.classList.add(
+            "page-loaded"
+        );
+
+    }
+);
+
+
+/* ========================= */
+/* MOVING GOLDEN ROPE */
+/* ========================= */
+
+const ropeMain =
+    document.querySelector(".rope-main");
+
+const ropeGlow =
+    document.querySelector(".rope-glow");
+
+const ropeShadow =
+    document.querySelector(".rope-shadow");
+
+const ropeHighlight =
+    document.querySelector(".rope-highlight");
+
+
+if (
+    ropeMain &&
+    ropeGlow &&
+    ropeShadow &&
+    ropeHighlight
+) {
+
+    const height = 1000;
+
+
+    function createRope(time) {
+
+        const points = [];
+
+
+        for (
+            let y = 0;
+            y <= height;
+            y += 6
+        ) {
+
+            const progress =
+                y / height;
+
+
+            /* Main slow wave */
+
+            const wave1 =
+                Math.sin(
+                    progress * 8 +
+                    time * 0.00045
+                ) * 7;
+
+
+            /* Secondary natural movement */
+
+            const wave2 =
+                Math.sin(
+                    progress * 17 -
+                    time * 0.00028
+                ) * 3;
+
+
+            /* Tiny rope movement */
+
+            const wave3 =
+                Math.sin(
+                    progress * 32 +
+                    time * 0.00018
+                ) * 1.5;
+
+
+            const x =
+                50 +
+                wave1 +
+                wave2 +
+                wave3;
+
+
+            points.push({
+                x: x,
+                y: y
+            });
+
+        }
+
+
+        /* Build SVG path */
+
+        let path = "";
+
+
+        points.forEach(
+            (point, index) => {
+
+                if (index === 0) {
+
+                    path =
+                        `M ${point.x} ${point.y}`;
+
+                } else {
+
+                    const previous =
+                        points[index - 1];
+
+
+                    path +=
+                        ` Q ${previous.x} ${previous.y} ${point.x} ${point.y}`;
+
+                }
+
+            }
+        );
+
+
+        /* Same path for all rope layers */
+
+        ropeGlow.setAttribute(
+            "d",
+            path
+        );
+
+        ropeShadow.setAttribute(
+            "d",
+            path
+        );
+
+        ropeMain.setAttribute(
+            "d",
+            path
+        );
+
+        ropeHighlight.setAttribute(
+            "d",
+            path
+        );
+
+
+        requestAnimationFrame(
+            createRope
+        );
+
+    }
+
+
+    requestAnimationFrame(
+        createRope
+    );
+
+}

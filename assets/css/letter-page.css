@@ -1,0 +1,993 @@
+/* ==========================================
+                RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#211710;
+    --bg-light:#3a281b;
+
+    --paper:#eee0c2;
+    --paper-light:#f8edd4;
+    --paper-dark:#cbb58b;
+
+    --ink:#403126;
+
+    --gold:#c9a45b;
+    --gold-light:#e6cc91;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    font-family:"Poppins",sans-serif;
+
+    color:var(--ink);
+
+    overflow-x:hidden;
+
+    background:
+
+    radial-gradient(
+        circle at 50% 15%,
+        rgba(211,170,92,.18),
+        transparent 38%
+    ),
+
+    linear-gradient(
+        135deg,
+        var(--bg),
+        var(--bg-light),
+        #18100b
+    );
+
+}
+
+
+/* ==========================================
+            BACKGROUND GLOW
+========================================== */
+
+.letter-bg{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-3;
+
+    background:
+
+    radial-gradient(
+        ellipse at center,
+        rgba(229,190,111,.08),
+        transparent 60%
+    );
+
+}
+
+
+/* ==========================================
+            FLOATING PARTICLES
+========================================== */
+
+.letter-particles{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+.letter-particles span{
+
+    position:absolute;
+
+    bottom:-30px;
+
+    color:var(--gold-light);
+
+    opacity:.16;
+
+    font-size:16px;
+
+    animation:
+    letterParticle
+    15s linear infinite;
+
+}
+
+.letter-particles span:nth-child(1){
+    left:12%;
+}
+
+.letter-particles span:nth-child(2){
+    left:35%;
+    animation-delay:3s;
+}
+
+.letter-particles span:nth-child(3){
+    left:55%;
+    animation-delay:6s;
+}
+
+.letter-particles span:nth-child(4){
+    left:76%;
+    animation-delay:9s;
+}
+
+.letter-particles span:nth-child(5){
+    left:91%;
+    animation-delay:12s;
+}
+
+@keyframes letterParticle{
+
+    from{
+
+        transform:
+        translateY(0)
+        rotate(0);
+
+        opacity:0;
+
+    }
+
+    15%{
+        opacity:.16;
+    }
+
+    85%{
+        opacity:.16;
+    }
+
+    to{
+
+        transform:
+        translateY(-110vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================
+                HEADER
+========================================== */
+
+.letter-header{
+
+    text-align:center;
+
+    padding:
+    65px 20px 30px;
+
+}
+
+.letter-small-title{
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:var(--gold-light);
+
+    opacity:.75;
+
+}
+
+.letter-header h1{
+
+    margin-top:10px;
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:64px;
+
+    font-weight:600;
+
+    color:#f2e4c7;
+
+    text-shadow:
+    0 0 25px rgba(201,164,91,.2);
+
+}
+
+.gold-line{
+
+    width:90px;
+
+    height:1px;
+
+    margin:
+    15px auto 0;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
+
+}
+
+
+/* ==========================================
+                LETTER WRAPPER
+========================================== */
+
+.letter-wrapper{
+
+    width:min(850px,92%);
+
+    margin:
+    25px auto 50px;
+
+    perspective:1200px;
+
+}
+
+
+/* ==========================================
+                VINTAGE PAPER
+========================================== */
+
+.vintage-paper{
+
+    position:relative;
+
+    min-height:850px;
+
+    padding:
+    75px 85px;
+
+    background:
+
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(255,255,255,.45),
+        transparent 25%
+    ),
+
+    radial-gradient(
+        circle at 80% 70%,
+        rgba(150,110,55,.08),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        var(--paper-light),
+        var(--paper),
+        #dfcba4
+    );
+
+    box-shadow:
+
+    0 35px 70px
+    rgba(0,0,0,.48),
+
+    inset 0 0 35px
+    rgba(110,75,30,.12);
+
+    transform:
+    rotateX(1deg);
+
+}
+
+
+/* ==========================================
+            PAPER EDGE
+========================================== */
+
+.vintage-paper::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border:
+    1px solid
+    rgba(111,79,42,.25);
+
+    pointer-events:none;
+
+}
+
+.vintage-paper::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+    radial-gradient(
+        ellipse at center,
+        transparent 55%,
+        rgba(86,57,27,.13)
+    );
+
+}
+
+
+/* ==========================================
+            PAPER CORNERS
+========================================== */
+
+.paper-corner{
+
+    position:absolute;
+
+    width:55px;
+
+    height:55px;
+
+    border-color:
+    rgba(104,74,38,.28);
+
+}
+
+.corner-one{
+
+    top:28px;
+
+    left:28px;
+
+    border-top:1px solid;
+    border-left:1px solid;
+
+}
+
+.corner-two{
+
+    right:28px;
+
+    bottom:28px;
+
+    border-right:1px solid;
+    border-bottom:1px solid;
+
+}
+
+
+/* ==========================================
+                CONTENT
+========================================== */
+
+.paper-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.date{
+
+    text-align:right;
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:17px;
+
+    color:#806a4c;
+
+    margin-bottom:50px;
+
+}
+
+.greeting{
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:29px;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================
+              LETTER TEXT
+========================================== */
+
+.letter-text{
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:21px;
+
+    line-height:2;
+
+    letter-spacing:.2px;
+
+    color:var(--ink);
+
+    text-align:left;
+
+}
+
+
+/* Har paragraph ke beech proper spacing */
+
+.letter-text p{
+
+    margin-bottom:24px;
+
+}
+
+
+/* ==========================================
+              CLOSING
+========================================== */
+
+.closing{
+
+    margin-top:50px;
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:23px;
+
+    color:#554031;
+
+}
+
+
+/* ==========================================
+              SIGNATURE
+========================================== */
+
+.signature{
+
+    margin-top:8px;
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:34px;
+
+    font-style:italic;
+
+    color:#5b4030;
+
+}
+
+
+/* ==========================================
+          DOWNLOAD SECTION
+========================================== */
+
+.download-section{
+
+    text-align:center;
+
+    padding:
+    10px 20px 30px;
+
+}
+
+.download-section p{
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:18px;
+
+    font-style:italic;
+
+    color:#bba98d;
+
+    margin-bottom:20px;
+
+}
+
+
+/* ==========================================
+          DOWNLOAD BUTTON
+========================================== */
+
+.download-letter{
+
+    display:inline-block;
+
+    padding:
+    14px 30px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    letter-spacing:.5px;
+
+    color:#2d2118;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #d8b86b,
+        #f0d99b,
+        #c29b4e
+    );
+
+    box-shadow:
+
+    0 10px 25px
+    rgba(0,0,0,.3),
+
+    0 0 20px
+    rgba(201,164,91,.15);
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease;
+
+}
+
+.download-letter:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+
+    0 16px 35px
+    rgba(0,0,0,.4),
+
+    0 0 30px
+    rgba(201,164,91,.3);
+
+}
+
+
+/* ==========================================
+              BACK BUTTON
+========================================== */
+
+.back-section{
+
+    text-align:center;
+
+    padding:
+    20px 20px 70px;
+
+}
+
+.back-letter{
+
+    color:#bba98d;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    transition:
+    color .3s ease;
+
+}
+
+.back-letter:hover{
+
+    color:var(--gold-light);
+
+}
+
+
+/* ==========================================
+          PAPER ENTRANCE
+========================================== */
+
+.letter-header{
+
+    opacity:0;
+
+    animation:
+    letterAppear
+    1s ease
+    forwards;
+
+}
+
+.letter-wrapper{
+
+    opacity:0;
+
+    animation:
+    paperAppear
+    1.2s
+    .25s
+    ease
+    forwards;
+
+}
+
+.download-section{
+
+    opacity:0;
+
+    animation:
+    letterAppear
+    1s
+    .8s
+    ease
+    forwards;
+
+}
+
+.back-section{
+
+    opacity:0;
+
+    animation:
+    letterAppear
+    1s
+    1s
+    ease
+    forwards;
+
+}
+
+
+@keyframes letterAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+@keyframes paperAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(35px)
+        rotateX(8deg);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        rotateX(1deg);
+
+    }
+
+}
+
+/* ==========================================
+          PAPER OPENING EFFECT
+========================================== */
+
+.vintage-paper{
+    transform-origin:top center;
+
+    animation:
+    paperOpen
+    1.2s
+    cubic-bezier(.2,.8,.2,1)
+    forwards;
+}
+
+@keyframes paperOpen{
+
+    0%{
+        opacity:0;
+        transform:
+        rotateX(10deg)
+        translateY(25px)
+        scale(.97);
+    }
+
+    100%{
+        opacity:1;
+        transform:
+        rotateX(1deg)
+        translateY(0)
+        scale(1);
+    }
+
+}
+
+
+/* ==========================================
+          SUBTLE PAPER MOVEMENT
+========================================== */
+
+.vintage-paper:hover{
+
+    box-shadow:
+
+    0 40px 80px rgba(0,0,0,.52),
+
+    inset 0 0 35px
+    rgba(110,75,30,.12);
+
+}
+
+
+/* ==========================================
+          DOWNLOAD BUTTON SHINE
+========================================== */
+
+.download-letter{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.download-letter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:left .7s ease;
+
+}
+
+.download-letter:hover::before{
+
+    left:140%;
+
+}
+
+
+/* ==========================================
+              MOBILE
+========================================== */
+
+@media(max-width:700px){
+
+    .letter-header{
+
+        padding:
+        50px 18px 25px;
+
+    }
+
+    .letter-header h1{
+
+        font-size:50px;
+
+    }
+
+    .letter-wrapper{
+
+        width:94%;
+
+    }
+
+    .vintage-paper{
+
+        min-height:auto;
+
+        padding:
+        55px 38px;
+
+    }
+
+    .date{
+
+        font-size:15px;
+
+        margin-bottom:35px;
+
+    }
+
+    .greeting{
+
+        font-size:25px;
+
+        margin-bottom:25px;
+
+    }
+
+    .letter-text{
+
+        font-size:18px;
+
+        line-height:1.85;
+
+    }
+
+    .letter-text p{
+
+        margin-bottom:20px;
+
+    }
+
+    .closing{
+
+        margin-top:38px;
+
+        font-size:21px;
+
+    }
+
+    .signature{
+
+        font-size:29px;
+
+    }
+
+}
+
+
+/* ==========================================
+              SMALL MOBILE
+========================================== */
+
+@media(max-width:450px){
+
+    .letter-header h1{
+
+        font-size:42px;
+
+    }
+
+    .letter-small-title{
+
+        font-size:9px;
+
+        letter-spacing:3px;
+
+    }
+
+    .vintage-paper{
+
+        padding:
+        45px 25px;
+
+    }
+
+    .vintage-paper::before{
+
+        inset:9px;
+
+    }
+
+    .paper-corner{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
+    .corner-one{
+
+        top:20px;
+        left:20px;
+
+    }
+
+    .corner-two{
+
+        right:20px;
+        bottom:20px;
+
+    }
+
+    .letter-text{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+    .download-letter{
+
+        padding:
+        13px 24px;
+
+        font-size:12px;
+
+    }
+
+}
+
+
+/* ==========================================
+          TOUCH DEVICES
+========================================== */
+
+@media(hover:none){
+
+    .vintage-paper:hover{
+
+        box-shadow:
+
+        0 35px 70px
+        rgba(0,0,0,.48),
+
+        inset 0 0 35px
+        rgba(110,75,30,.12);
+
+    }
+
+}

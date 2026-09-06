@@ -1,0 +1,1155 @@
+/* ==========================================
+                RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+}
+
+body{
+
+    overflow:hidden;
+
+    background:#000;
+
+    color:#fff;
+
+    font-family:
+    "Poppins",
+    sans-serif;
+
+}
+
+
+/* ==========================================
+              INTRO SCREEN
+========================================== */
+
+.intro-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    background:#000;
+
+    z-index:100;
+
+    transition:
+    opacity 1.2s ease,
+    visibility 1.2s ease;
+
+}
+
+
+/* ==========================================
+              INTRO CONTENT
+========================================== */
+
+.intro-content{
+
+    width:min(600px,90%);
+
+    padding:30px;
+
+}
+
+
+/* Small heading */
+
+.intro-mini{
+
+    margin-bottom:16px;
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    color:#bda56c;
+
+    opacity:.7;
+
+}
+
+
+/* Main title */
+
+.intro-content h1{
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:78px;
+
+    font-weight:500;
+
+    letter-spacing:2px;
+
+    color:#f3ead8;
+
+    text-shadow:
+
+    0 0 20px
+    rgba(218,184,105,.12),
+
+    0 0 60px
+    rgba(218,184,105,.06);
+
+}
+
+
+/* Subtitle */
+
+.intro-subtitle{
+
+    max-width:400px;
+
+    margin:
+    18px auto 38px;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    color:#aaa;
+
+    font-weight:300;
+
+}
+
+
+/* ==========================================
+              ENTER BUTTON
+========================================== */
+
+.enter-btn{
+
+    position:relative;
+
+    padding:
+    13px 34px;
+
+    border:1px solid
+    rgba(214,181,104,.5);
+
+    border-radius:40px;
+
+    background:
+    rgba(255,255,255,.025);
+
+    color:#e6d39e;
+
+    font-family:
+    "Poppins",
+    sans-serif;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    background .35s ease;
+
+}
+
+
+/* Golden glow */
+
+.enter-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-8px;
+
+    border-radius:50px;
+
+    border:1px solid
+    rgba(214,181,104,.08);
+
+    opacity:0;
+
+    transition:
+    opacity .4s ease;
+
+}
+
+
+.enter-btn:hover{
+
+    transform:
+    translateY(-3px);
+
+    background:
+    rgba(214,181,104,.08);
+
+    box-shadow:
+
+    0 0 20px
+    rgba(214,181,104,.15),
+
+    0 10px 30px
+    rgba(0,0,0,.5);
+
+}
+
+.enter-btn:hover::before{
+
+    opacity:1;
+
+}
+
+
+/* ==========================================
+          INTRO DISAPPEAR STATE
+========================================== */
+
+.intro-screen.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================
+              STAR WORLD
+========================================== */
+
+.star-world{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+    opacity 1.5s ease;
+
+}
+
+.star-world.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+/* ==========================================
+              RESPONSIVE
+========================================== */
+
+@media(max-width:600px){
+
+    .intro-content h1{
+
+        font-size:56px;
+
+    }
+
+    .intro-subtitle{
+
+        font-size:13px;
+
+        padding:0 15px;
+
+    }
+
+    .intro-mini{
+
+        font-size:9px;
+
+        letter-spacing:4px;
+
+    }
+
+}
+
+/* ==========================================
+              STAR CONTAINER
+========================================== */
+
+.star-container{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================
+              GOLDEN BURST
+========================================== */
+
+.star-world::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#f5d98b;
+
+    box-shadow:
+
+    0 0 15px #f5d98b,
+
+    0 0 40px rgba(245,217,139,.8);
+
+    transform:
+    translate(-50%,-50%)
+    scale(0);
+
+    opacity:0;
+
+}
+
+.star-world.burst::before{
+
+    animation:
+    starBurst
+    1.4s
+    ease-out
+    forwards;
+
+}
+
+@keyframes starBurst{
+
+    0%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(0);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(1);
+
+        opacity:1;
+
+    }
+
+    60%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(18);
+
+        opacity:.5;
+
+    }
+
+    100%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(35);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================
+              FALLING STARS
+========================================== */
+
+.star{
+
+    position:absolute;
+
+    top:-30px;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#fff5ce;
+
+    box-shadow:
+
+    0 0 6px #fff,
+
+    0 0 15px #e7c66d,
+
+    0 0 28px rgba(231,198,109,.6);
+
+    cursor:pointer;
+
+    z-index:5;
+
+    animation:
+    starFall
+    var(--duration)
+    linear
+    infinite;
+
+    animation-delay:
+    var(--delay);
+
+    transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+
+}
+
+
+/* Different star sizes */
+
+.star.small{
+
+    width:5px;
+
+    height:5px;
+
+}
+
+.star.large{
+
+    width:11px;
+
+    height:11px;
+
+}
+
+
+/* Star hover */
+
+.star:hover{
+
+    transform:scale(1.8);
+
+    animation-play-state:paused;
+
+    box-shadow:
+
+    0 0 12px #fff,
+
+    0 0 28px #f3d57d,
+
+    0 0 50px #d9ae4e;
+
+}
+
+
+/* ==========================================
+              STAR FALL
+========================================== */
+
+@keyframes starFall{
+
+    0%{
+
+        transform:
+        translateY(-40px)
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    8%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:
+        translateY(50vh)
+        rotate(180deg);
+
+        opacity:.95;
+
+    }
+
+    92%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(110vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================
+          COLLECTED STAR
+========================================== */
+
+.star.collected{
+
+    animation:none;
+
+    position:fixed;
+
+    width:6px;
+
+    height:6px;
+
+    background:#f5d98b;
+
+    box-shadow:
+
+    0 0 8px #fff,
+
+    0 0 20px #e0b95f;
+
+    cursor:default;
+
+    transform:scale(.9);
+
+}
+
+
+/* ==========================================
+          COLLECTION COUNTER
+========================================== */
+
+.collection-count{
+
+    position:absolute;
+
+    top:28px;
+
+    right:35px;
+
+    padding:
+    8px 15px;
+
+    border:1px solid
+    rgba(218,184,105,.2);
+
+    border-radius:25px;
+
+    color:#cdbb91;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    background:
+    rgba(255,255,255,.025);
+
+    backdrop-filter:blur(8px);
+
+    z-index:20;
+
+}
+
+/* ==========================================
+              MEMORY OVERLAY
+========================================== */
+
+.memory-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+    rgba(0,0,0,.72);
+
+    backdrop-filter:
+    blur(8px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    z-index:100;
+
+    transition:
+    opacity .4s ease,
+    visibility .4s ease;
+
+}
+
+.memory-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+
+/* ==========================================
+              MEMORY WINDOW
+========================================== */
+
+.memory-window{
+
+    position:relative;
+
+    width:min(480px,92vw);
+
+    max-height:88vh;
+
+    overflow:auto;
+
+    padding:22px;
+
+    border:1px solid
+    rgba(218,184,105,.28);
+
+    border-radius:18px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(30,25,20,.96),
+        rgba(12,10,8,.98)
+    );
+
+    box-shadow:
+
+    0 30px 80px
+    rgba(0,0,0,.7),
+
+    0 0 35px
+    rgba(218,184,105,.08);
+
+    transform:
+    scale(.75)
+    translateY(25px);
+
+    opacity:0;
+
+    transition:
+    transform .45s
+    cubic-bezier(.2,.8,.2,1),
+    opacity .4s ease;
+
+}
+
+.memory-window.show{
+
+    transform:
+    scale(1)
+    translateY(0);
+
+    opacity:1;
+
+}
+
+
+/* ==========================================
+              CLOSE BUTTON
+========================================== */
+
+.close-memory{
+
+    position:absolute;
+
+    top:12px;
+
+    right:12px;
+
+    width:32px;
+
+    height:32px;
+
+    border:1px solid
+    rgba(255,255,255,.15);
+
+    border-radius:50%;
+
+    background:
+    rgba(0,0,0,.45);
+
+    color:#ddd;
+
+    font-size:21px;
+
+    line-height:1;
+
+    cursor:pointer;
+
+    z-index:10;
+
+    transition:
+    transform .3s ease,
+    background .3s ease,
+    color .3s ease;
+
+}
+
+.close-memory:hover{
+
+    transform:
+    rotate(90deg);
+
+    background:
+    rgba(218,184,105,.15);
+
+    color:#f0d99b;
+
+}
+
+
+/* ==========================================
+              MEDIA AREA
+========================================== */
+
+.memory-media{
+
+    width:100%;
+
+    margin-bottom:20px;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    background:#080808;
+
+    box-shadow:
+    0 12px 30px
+    rgba(0,0,0,.45);
+
+}
+
+
+/* Image */
+
+.memory-media img{
+
+    display:block;
+
+    width:100%;
+
+    max-height:55vh;
+
+    object-fit:contain;
+
+}
+
+
+/* Video */
+
+.memory-media video{
+
+    display:block;
+
+    width:100%;
+
+    max-height:55vh;
+
+    object-fit:contain;
+
+    background:#000;
+
+}
+
+
+/* ==========================================
+              MEMORY TITLE
+========================================== */
+
+.memory-title{
+
+    margin-bottom:10px;
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:31px;
+
+    font-weight:500;
+
+    text-align:center;
+
+    color:#f0dfbd;
+
+}
+
+
+/* ==========================================
+              MEMORY TEXT
+========================================== */
+
+.memory-text{
+
+    max-width:390px;
+
+    margin:auto;
+
+    font-size:14px;
+
+    line-height:1.9;
+
+    font-weight:300;
+
+    text-align:center;
+
+    color:#b9aa92;
+
+}
+
+
+/* ==========================================
+              MOBILE
+========================================== */
+
+@media(max-width:500px){
+
+    .memory-window{
+
+        width:94vw;
+
+        padding:16px;
+
+        border-radius:15px;
+
+    }
+
+    .memory-title{
+
+        font-size:27px;
+
+    }
+
+    .memory-text{
+
+        font-size:13px;
+
+        line-height:1.8;
+
+    }
+
+}
+
+/* ==========================================
+              CONTINUE BUTTON
+========================================== */
+
+.continue-btn{
+
+    display:inline-block;
+
+    margin-top:32px;
+
+    padding:
+    12px 28px;
+
+    border:1px solid
+    rgba(218,184,105,.4);
+
+    border-radius:30px;
+
+    color:#e3ce9b;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    background:
+    rgba(255,255,255,.025);
+
+    opacity:0;
+
+    transform:
+    translateY(10px);
+
+    transition:
+    opacity .8s ease .8s,
+    transform .8s ease .8s,
+    box-shadow .35s ease,
+    background .35s ease;
+
+}
+
+.final-message.active .continue-btn{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+}
+
+.continue-btn:hover{
+
+    background:
+    rgba(218,184,105,.08);
+
+    box-shadow:
+    0 0 25px
+    rgba(218,184,105,.15);
+
+    transform:
+    translateY(-3px);
+
+}
+
+/* ==========================================
+        FINAL MESSAGE - FIXED VERSION
+========================================== */
+
+.final-message{
+
+    position:fixed !important;
+
+    inset:0 !important;
+
+    width:100vw !important;
+
+    height:100vh !important;
+
+    display:flex !important;
+
+    flex-direction:column !important;
+
+    align-items:center !important;
+
+    justify-content:center !important;
+
+    text-align:center !important;
+
+    padding:30px !important;
+
+    background:#000 !important;
+
+    opacity:0 !important;
+
+    visibility:hidden !important;
+
+    pointer-events:none !important;
+
+    z-index:200 !important;
+
+    transition:
+    opacity 1.2s ease,
+    visibility 1.2s ease;
+
+}
+
+
+/* ONLY AFTER 8/8 */
+
+.final-message.active{
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+
+    pointer-events:auto !important;
+
+}
+
+
+/* ==========================================
+            CONSTELLATION
+========================================== */
+
+.final-message .constellation{
+
+    margin-bottom:40px;
+
+    font-size:24px;
+
+    line-height:2.5;
+
+    letter-spacing:10px;
+
+    color:#f5d98b;
+
+    text-shadow:
+
+    0 0 8px #fff,
+
+    0 0 20px #e1b956,
+
+    0 0 45px rgba(225,185,86,.6);
+
+}
+
+
+/* ==========================================
+              FINAL TITLE
+========================================== */
+
+.final-message h2{
+
+    margin:0 0 15px;
+
+    font-family:
+    "Cormorant Garamond",
+    serif;
+
+    font-size:44px;
+
+    font-weight:500;
+
+    color:#f2e6cf;
+
+}
+
+
+/* ==========================================
+              FINAL TEXT
+========================================== */
+
+.final-message p{
+
+    margin:0;
+
+    max-width:450px;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    color:#aaa;
+
+}
+
+
+/* ==========================================
+              CONTINUE
+========================================== */
+
+.final-message .continue-btn{
+
+    margin-top:30px;
+
+}
+
+.star{
+    z-index:50 !important;
+    pointer-events:auto !important;
+}
+
+.memory-overlay{
+    z-index:100 !important;
+}
+
+.final-message{
+    z-index:200 !important;
+}
+
+/* ==========================================
+          STAR CLICK FIX
+========================================== */
+
+.star{
+
+    position:absolute !important;
+
+    z-index:50 !important;
+
+    pointer-events:auto !important;
+
+    cursor:pointer;
+
+    touch-action:manipulation;
+
+}
+
+
+/* Hover par star rukega */
+
+.star:hover{
+
+    animation-play-state:paused !important;
+
+    transform:scale(1.8);
+
+}
+
+
+/* Collected star */
+
+.star.collected{
+
+    pointer-events:none;
+
+    animation:none !important;
+
+}

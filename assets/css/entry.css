@@ -1,0 +1,119 @@
+.hero{
+
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+
+}
+
+.small-title{
+
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#8d7b74;
+    font-size:14px;
+    margin-bottom:18px;
+
+}
+
+.hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:80px;
+    font-weight:600;
+    color:#4a3d38;
+    margin-bottom:20px;
+
+}
+
+.quote{
+
+    width:650px;
+    max-width:90%;
+    line-height:1.8;
+    color:#6d625c;
+    font-size:18px;
+    margin-bottom:45px;
+
+}
+
+#enterButton{
+
+    padding:16px 45px;
+    border-radius:50px;
+    background:white;
+    color:#4a3d38;
+    font-size:16px;
+    border:1px solid #ead8d1;
+    transition:.35s;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+#enterButton:hover{
+
+    transform:translateY(-4px);
+    background:#f8ece8;
+
+}
+
+.flowers{
+
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+
+}
+
+.flowers span{
+
+    position:absolute;
+    font-size:32px;
+    opacity:.7;
+    animation:float 18s ease-in-out infinite;
+
+}
+
+.flowers span:nth-child(1){
+
+    left:8%;
+    top:18%;
+    animation-duration:18s;
+
+}
+
+.flowers span:nth-child(2){
+
+    left:82%;
+    top:20%;
+    animation-duration:24s;
+
+}
+
+.flowers span:nth-child(3){
+
+    left:15%;
+    bottom:15%;
+    animation-duration:20s;
+
+}
+
+.flowers span:nth-child(4){
+
+    right:12%;
+    bottom:18%;
+    animation-duration:26s;
+
+}
+
+.flowers span:nth-child(5){
+
+    left:50%;
+    top:8%;
+    animation-duration:22s;
+
+}
